@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::paginate(100);
+        return view('users.index', compact('users'));
+    }
+
     public function create()
     {
         return view('users.create');
@@ -19,6 +25,6 @@ class UserController extends Controller
             'password' => bcrypt($request->input('password'))
         ]
     );
-        return redirect()->back();
+        return redirect()->route('users.index');
     }
 }
