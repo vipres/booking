@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
+
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    @stack('css-plugins')
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -29,18 +31,18 @@
         @endguest
 
         <!--   Core JS Files   -->
-        <script src="{{ asset('js/core/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/core/jquery.min.js') }}"  ></script>
+
         <script src="{{ asset('js/core/popper.min.js') }}"></script>
-        <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
-        <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-
-
-
-        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-        <script src="{{ asset('js/material-dashboard.js?v=2.1.1') }}" type="text/javascript"></script>
-        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/settings.js') }}"></script>
+        <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" defer></script>
+        <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}" defer></script>
+        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src="{{ asset('js/material-dashboard.js?v=2.1.1') }}" type="text/javascript" defer></script>
+        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+
+
         @stack('js')
     </body>
 </html>

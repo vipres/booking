@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         'email' => 'viprestal@hotmail.com',
         'password' => bcrypt('Manolo'),
         'username' => 'xoox',]);
-        \App\Models\User::factory(1000)->create();
+        \App\Models\User::factory(500)->create();
     }
 }
